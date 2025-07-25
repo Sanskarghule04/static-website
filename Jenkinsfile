@@ -3,18 +3,18 @@ pipeline {
 
     environment {
         IMAGE_NAME = "nginxsite"
-        DOCKERHUB_CREDENTIALS = credentials('dockerhub-creds')  // Your DockerHub creds in Jenkins
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub-creds')
         AWS_REGION = 'us-east-1'
         ECR_REPO = "662147645403.dkr.ecr.us-east-1.amazonaws.com/nginxsite"
-        AWS_CREDENTIALS = credentials('aws-ecr-creds')           // Your AWS creds in Jenkins
+        AWS_CREDENTIALS = credentials('aws-ecr-creds')
     }
 
-    stage('Clone Repository') {
-    steps {
-        git branch: 'main', url: 'https://github.com/Sanskarghule04/static-website.git'
-    }
-}
-
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Sanskarghule04/static-website.git'
+            }
+        }
 
         stage('Build Docker Image') {
             steps {
