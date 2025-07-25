@@ -9,12 +9,12 @@ pipeline {
         AWS_CREDENTIALS = credentials('aws-ecr-creds')           // Your AWS creds in Jenkins
     }
 
-    stages {
-        stage('Clone Repository') {
-            steps {
-                git 'https://github.com/Sanskarghule04/static-website.git'
-            }
-        }
+    stage('Clone Repository') {
+    steps {
+        git branch: 'main', url: 'https://github.com/Sanskarghule04/static-website.git'
+    }
+}
+
 
         stage('Build Docker Image') {
             steps {
