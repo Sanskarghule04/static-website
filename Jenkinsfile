@@ -2,10 +2,10 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "nginxsite"
+        IMAGE_NAME = "mycoolapp"
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-creds')
         AWS_REGION = 'us-east-1'
-        ECR_REPO = "662147645403.dkr.ecr.us-east-1.amazonaws.com/nginxsite"
+        ECR_REPO = "662147645403.dkr.ecr.us-east-1.amazonaws.com/mycoolapp"
         AWS_CREDENTIALS = credentials('aws-ecr-creds')
     }
 
