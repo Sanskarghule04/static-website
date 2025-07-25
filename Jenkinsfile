@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'hhttps://github.com/Sanskarghule04/static-website.git'
+                git 'https://github.com/Sanskarghule04/static-website.git'
             }
         }
 
